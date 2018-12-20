@@ -264,7 +264,7 @@ class VideoProvider extends FileProvider {
         if ($this->configOgg) {
             $pathOgg = sprintf('%s/%s/videos_ogg_%s', $this->getFilesystem()->getAdapter()->getDirectory(), $this->generatePath($media), $media->getId().'.ogg');
             $ogg = preg_replace('/\.[^.]+$/', '.' . 'ogg', $pathOgg);
-            $video->save(new Video\Ogg(), $ogg);
+            $video->save(new Video\X264('aac'), $mp4);
         }
 
         if ($this->configWebm) {
